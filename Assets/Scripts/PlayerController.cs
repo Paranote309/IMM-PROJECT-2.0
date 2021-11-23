@@ -6,17 +6,18 @@ public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody playerRb;
-    public float speed = 5/0f;
+    public float speed = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
-    // playerRb = GetComponet<Rigidbody>();
+      playerRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float forwardInput = Input.GetAxis("Vertical");
+        // move the cue sitck around the pool table
+        float forwardInput = Input.GetAxis("Horizontal");
         playerRb.AddForce(Vector3.forward * speed * forwardInput);
     }
 }

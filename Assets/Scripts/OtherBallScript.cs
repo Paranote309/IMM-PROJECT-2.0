@@ -19,9 +19,10 @@ public class OtherBallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Destroy(GameObject) == Destroy(otherBall))
-        {
-            ballAudio.PlayOneShot(potSound, 1.0f);
-        }
+
+    }
+
+    void onDestroy(){
+        ballAudio.PlayOneShot(potSound, 1.0f);
     }
 }

@@ -7,7 +7,7 @@ public class DetectCollisions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,9 +17,9 @@ public class DetectCollisions : MonoBehaviour
     }
 
     void onTriggerEnter(Collider other){
-        if(gameObject != gameObject(Ball))
-         {
-             Destroy(other.gameObject);
-         }
+    //    if(other.gameObject.name != "Ball")
+     //   {
+            Destroy(gameObject);
+      //  }
     }
 }

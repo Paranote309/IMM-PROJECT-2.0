@@ -16,10 +16,14 @@ public class DetectCollisions : MonoBehaviour
         
     }
 
-    void onTriggerEnter(Collider other){
-    //    if(other.gameObject.name != "Ball")
-     //   {
-            Destroy(gameObject);
-      //  }
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("Ball"))
+        {
+        
+        Destroy(other.gameObject);
+        }
+        Debug.Log("Ball");
     }
-}
+
+    }
+

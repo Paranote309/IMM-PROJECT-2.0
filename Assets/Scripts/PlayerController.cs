@@ -6,8 +6,9 @@ public class PlayerController : MonoBehaviour
 {
 
     // private Rigidbody playerRb;
-    public float speed = 45.0f;
+    public float speed = 10.0f;
     public GameObject  cueBallPrefab;
+    public GameObject  Tip;
     public float verticalMouseRotation;
     public float horizontalInput;
     public float turnSpeed= 100.0f;
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetMouseButtonDown(0)){
-          Instantiate(cueBallPrefab , transform.position , cueBallPrefab.transform.rotation);
+          Instantiate(cueBallPrefab , Tip.transform.position , cueBallPrefab.transform.rotation);
         }
     }
 }

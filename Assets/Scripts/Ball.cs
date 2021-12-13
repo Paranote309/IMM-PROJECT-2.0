@@ -11,9 +11,9 @@ public class Ball : MonoBehaviour
      // Use this for initialization
      void Start () {
          RB = GetComponent<Rigidbody>();
-         RB.velocity = transform.forward * 20f;
+         RB.velocity = transform.forward * 5.0f;
      }
-     
+
     //https://answers.unity.com/questions/1591845/how-do-the-ball-moving-like-billiard-after-collisi.html
      void OnCollisionEnter(Collision col)
      {

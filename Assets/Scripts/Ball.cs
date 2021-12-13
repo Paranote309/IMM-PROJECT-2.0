@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 5.0f;
+    public float speed = 1.0f;
     Rigidbody RB;
  
      // Use this for initialization
@@ -13,7 +13,8 @@ public class Ball : MonoBehaviour
          RB = GetComponent<Rigidbody>();
          RB.velocity = transform.forward * 20f;
      }
- 
+     
+    //https://answers.unity.com/questions/1591845/how-do-the-ball-moving-like-billiard-after-collisi.html
      void OnCollisionEnter(Collision col)
      {
          if (col.collider.tag != "Wall") return;

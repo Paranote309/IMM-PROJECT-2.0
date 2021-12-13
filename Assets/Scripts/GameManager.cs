@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI winText;
+    public TextMeshProUGUI hardWinText;
     public Button restartButton;
     public Button menuButton;
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
     restartButton.gameObject.SetActive(false);
     menuButton.gameObject.SetActive(false);
     winText.gameObject.SetActive(false);
-
+    hardWinText.gameObject.SetActive(false);
 
        UpdateScore(0);
        isGameActive = true;
@@ -42,6 +43,11 @@ public class GameManager : MonoBehaviour
     public void StartGameHard()
     {
         SceneManager.LoadScene("HardScene");
+    }
+
+    public void GameMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     void GameOver()
@@ -69,11 +75,30 @@ public class GameManager : MonoBehaviour
         score = 0;
     }
 
+    public void HardWinGame()
+    {
+        isGameActive = false;
+        restartButton.gameObject.SetActive(true);
+        menuButton.gameObject.SetActive(true);
+        hardWinText.gameObject.SetActive(true);
+        score = 0;
+    }
+
     public void UpdateScore(int scoreToAdd){
 
         score+= scoreToAdd;
         scoreText.text = "Score: " +score;
         if(score == 10)
+        {
+        WinGame();
+        }
+        }
+
+        public void HardGameScore(int scoreToAdd)
+        {
+                    score+= scoreToAdd;
+        scoreText.text = "Score: " +score;
+        if(score == 45)
         {
         WinGame();
         }

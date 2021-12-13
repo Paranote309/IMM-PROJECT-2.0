@@ -6,8 +6,7 @@ public class OtherBallScript : MonoBehaviour
 
 {
     public GameObject otherBall;
-    public AudioClip potSound;
-    public AudioSource ballAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +18,11 @@ public class OtherBallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    void onDestroy(){
-        ballAudio.PlayOneShot(potSound, 1.0f);
+    public void onDestroy(){
+
+
     }
 }
